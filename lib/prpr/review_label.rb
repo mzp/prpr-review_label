@@ -1,7 +1,3 @@
 require "prpr/review_label/version"
-
-module Prpr
-  module ReviewLabel
-    # Your code goes here...
-  end
-end
+require "prpr/action/review_label/labeled"
+require "prpr/handler/review_label"
