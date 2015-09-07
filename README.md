@@ -1,41 +1,32 @@
 # Prpr::ReviewLabel
+[Prpr](https://github.com/mzp/prpr) plugin to notify pull request to chat service.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prpr/review_label`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
+## Install
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'prpr-review_label'
+# Gemfile
+gem 'prpr-review_label', github: 'mzp/prpr-review_label'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install prpr-review_label
-
 ## Usage
+When some pull request is labeled, the pull request is notified to chat service.
 
-TODO: Write usage instructions here
+![review notification](https://raw.githubusercontent.com/mzp/prpr-review_label/master/review_notification.png)
 
-## Development
+To add chat service, use publisher adapter (e.g. [prpr-slack](https://github.com/mzp/prpr-slack)).
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Env
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+REVIEW_LABEL - label name repsenting in-review (Default: REVIEW)
+REVIEW_LABEL_NOTIFICATION - notification message body.
+REVIEW_LABEL_ROOM - room for notificating in-review
+```
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prpr-review_label. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+`%{field_name}` of `REVIEW_LABEL_NOTIFICATION` is replaced with corresponding value in [pull request payload](https://developer.github.com/v3/pulls/#get-a-single-pull-request) (e.g. `title`, or `body`, `html_url`).
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["mzpppp@gmail.com"]
 
   spec.summary       = "Prpr plugin: notify reviewing pull request"
-  spec.description   = "This plugin broadcast pull request url when it is labeled as review"
-  spec.homepage      = "http://github.com/mzp/prpr"
+  spec.description   = "When some pull request is labeled, the pull request is notified to chat service."
+  spec.homepage      = "http://github.com/mzp/prpr-review_label"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
