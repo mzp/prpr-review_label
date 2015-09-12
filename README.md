@@ -7,7 +7,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 # Gemfile
-gem 'prpr-review_label', github: 'mzp/prpr-review_label'
+gem 'prpr-review_label'
 ```
 
 ## Usage
