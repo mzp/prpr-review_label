@@ -21,11 +21,11 @@ To add chat service, use publisher adapter (e.g. [prpr-slack](https://github.com
 
 ```
 REVIEW_LABEL - label name repsenting in-review (Default: REVIEW)
-REVIEW_LABEL_NOTIFICATION - notification message body.
+REVIEW_LABEL_BODY - notification message body.
 REVIEW_LABEL_ROOM - room for notificating in-review
 ```
 
-`%{field_name}` of `REVIEW_LABEL_NOTIFICATION` is replaced with corresponding value in [pull request payload](https://developer.github.com/v3/pulls/#get-a-single-pull-request) (e.g. `title`, or `body`, `html_url`).
+`%{field_name}` of `REVIEW_LABEL_BODY` is replaced with corresponding value in [pull request payload](https://developer.github.com/v3/pulls/#get-a-single-pull-request) (e.g. `title`, or `body`, `html_url`).
 
 ## License
 
